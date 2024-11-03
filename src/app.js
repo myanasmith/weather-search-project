@@ -2,9 +2,44 @@ function updateWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
   let cityElement = document.querySelector("#weather-app-city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windSpeedElement = document.querySelector("#wind-speed");
+  let timeElement = document.querySelector("#time");
+
+  // Update time to the current moment in local timezone
+  let date = new Date();
+
+  console.log(response.data);
 
   cityElement.innerHTML = response.data.city;
+  timeElement.innerHTML = formatDate(date);
+  descriptionElement.innerHTML = response.data.condition.description;
+  humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
+  windSpeedElement.innerHTML = `${response.data.wind.speed} mph`;
   temperatureElement.innerHTML = Math.round(temperature);
+}
+
+function formatDate(date) {
+  // Get the day of the week
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  // Format time to the user's local timezone
+  let timeString = date.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  return `${day} ${timeString}`;
 }
 
 function searchCity(city) {
@@ -20,7 +55,8 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-let searchFormEement = document.querySelector("#search-form");
-searchFormEement.addEventListener("submit", handleSearchSubmit);
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("Thailand");
+// Initial search to load weather for a default city
+searchCity("Seattle");
