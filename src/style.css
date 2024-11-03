@@ -46,17 +46,28 @@ main {
   padding: 30px 0;
 }
 
-.weather-app-details {
-  line-height: 0.6;
-  flex: 1; /* Allows each item to take equal width */
+.weather-app-main-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
+
+.weather-app-details {
+  line-height: 1;
+}
+
 .weather-app-city {
+  margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-style: italic;
-  margin: 0;
-  font-size: 45px;
+  font-size: 48px;
   color: #5c4033;
+}
+
+.weather-app-details p {
+  margin-top: 5px;
 }
 
 .day-of-week {
@@ -66,35 +77,42 @@ main {
   font-weight: 700;
 }
 
+.weather-app-info {
+  flex: 1;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 1.5;
+  text-align: left;
+}
+
 strong {
   color: #19c3fb;
 }
 
-.weather-app-info {
+.weather-app-icon {
   display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust this value to increase space between icon, temp, and unit */
+  font-size: 30px;
+  color: rgb(114, 114, 114);
+  font-weight: 700;
+  flex: 1;
   justify-content: flex-end;
-  gap: 20px;
-  font-size: 16px;
-  line-height: 20px;
-  color: rgba(0, 0, 0, 0.6);
-  flex: 1; /* Allows each item to take equal width */
-  text-align: left;
+  margin-right: 10px;
 }
 
 .weather-app-temp {
-  display: flex;
-  justify-content: flex-end;
-  flex: 1; /* Allows each item to take equal width */
-  font-size: 48px;
+  font-size: 55px;
   font-weight: 700;
   color: rgb(114, 114, 114);
 }
 
-.weather-app-main-row {
-  display: flex;
-  justify-content: space-between; /* Spreads items across the row */
-  align-items: center;
-  gap: 20px; /* Adjusts space between the columns */
+.weather-app-unit {
+  font-size: 22px !important;
+  color: rgb(114, 114, 114);
+  align-self: flex-start;
+  position: relative;
+  top: 12px; /* Adjust this value to align it perfectly with the temperature */
 }
 
 footer {
