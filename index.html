@@ -15,24 +15,33 @@
   <body>
     <div class="weather-app">
       <header>
-        <form>
-          <input type="search" placeholder="Enter a city.." required />
-          <input type="submit" value="Search" />
+        <form class="search-form">
+          <input
+            type="search"
+            placeholder="Enter a city.."
+            required
+            class="search-form-input"
+          />
+          <input type="submit" value="Search" class="search-form-button" />
         </form>
       </header>
       <main>
-        <div>
-          <h1>Thailand</h1>
-          <p>Saturday 6:02PM Clear</p>
+        <div class="weather-app-details">
+          <div>
+            <h1 class="weather-app-city">Thailand</h1>
+            <p>Saturday 6:02PM Clear</p>
+          </div>
         </div>
-        <div>
-          <p>
-            Precipitation: 0%
-            <br />
-            Humidity: 58%
-            <br />
-            Wind: 5 km/h
-          </p>
+        <div class="weather-app-info">
+          <div>
+            <p>
+              Precipitation: 0%
+              <br />
+              Humidity: 58%
+              <br />
+              Wind: 5 km/h
+            </p>
+          </div>
         </div>
         <div>⛅️ 78°F</div>
       </main>
