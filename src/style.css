@@ -82,30 +82,35 @@ strong {
   color: #19c3fb;
 }
 
-.weather-app-icon {
+.weather-app-temp-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Adjust this value to increase space between icon, temp, and unit */
-  font-size: 30px;
-  color: rgb(114, 114, 114);
-  font-weight: 700;
-  flex: 1;
-  justify-content: flex-end;
-  margin-right: 10px;
+  gap: 10px;
+}
+
+.weather-app-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.weather-app-temp-unit {
+  display: flex;
+  align-items: flex-start;
 }
 
 .weather-app-temp {
-  font-size: 55px;
+  font-size: 60px;
   font-weight: 700;
   color: rgb(114, 114, 114);
 }
 
 .weather-app-unit {
-  font-size: 22px !important;
+  font-size: 22px;
   color: rgb(114, 114, 114);
+  margin-left: 4px;
   align-self: flex-start;
   position: relative;
-  top: 12px; /* Adjust this value to align it perfectly with the temperature */
+  top: 12px;
 }
 
 footer {
