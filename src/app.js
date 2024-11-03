@@ -1,7 +1,10 @@
 function updateWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = response.data.temperature.current;
-  console.log(response.data.temperature.current);
+  let temperature = response.data.temperature.current;
+  let cityElement = document.querySelector("#weather-app-city");
+
+  cityElement.innerHTML = response.data.city;
+  temperatureElement.innerHTML = Math.round(temperature);
 }
 
 function searchCity(city) {
@@ -13,10 +16,11 @@ function searchCity(city) {
 function handleSearchSubmit(event) {
   event.preventDefault();
   let searchInput = document.querySelector("#search-form-input");
-  let cityElement = document.querySelector("#weather-app-city");
-  cityElement.innerHTML = searchInput.value;
+
   searchCity(searchInput.value);
 }
 
 let searchFormEement = document.querySelector("#search-form");
 searchFormEement.addEventListener("submit", handleSearchSubmit);
+
+searchCity("Thailand");
