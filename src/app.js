@@ -6,11 +6,7 @@ function updateWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windSpeedElement = document.querySelector("#wind-speed");
   let timeElement = document.querySelector("#time");
-
-  // Update time to the current moment in local timezone
   let date = new Date();
-
-  console.log(response.data);
 
   cityElement.innerHTML = response.data.city;
   timeElement.innerHTML = formatDate(date);
