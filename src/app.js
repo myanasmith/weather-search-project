@@ -20,7 +20,6 @@ function updateWeather(response) {
 }
 
 function formatDate(date) {
-  // Get the day of the week
   let days = [
     "Sunday",
     "Monday",
@@ -32,7 +31,6 @@ function formatDate(date) {
   ];
   let day = days[date.getDay()];
 
-  // Format time to the user's local timezone
   let timeString = date.toLocaleTimeString([], {
     hour: "2-digit",
     minute: "2-digit",
@@ -57,5 +55,4 @@ function handleSearchSubmit(event) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-// Initial search to load weather for a default city
 searchCity("Seattle");
